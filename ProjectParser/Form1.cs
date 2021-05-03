@@ -20,8 +20,8 @@ namespace ProjectParser
 			InitializeComponent();
 
 			// TODO save and restore previously used path names
-			TextProjectFile.Text = @"C:\Projects\HealthViews\DEV\Current\HVClinician\ComponentsSource\VB6\Data\dbGalenILAB\dbGalenILAB.vbp";
-			TextTargetDir.Text = @"C:\Projects\HealthViews\DEV\Current\HVClinician\ComponentsSource\Converted";
+			TextProjectFile.Text = @"C:\Projects\whatever\VB6\thingy.vbp";
+			TextTargetDir.Text = @"C:\Projects\whatever\Converted";
 		}
 
 		private void BtnSelectProject_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace ProjectParser
 			openFileDialog1.Title = "Select VB6 Project";
 			openFileDialog1.Multiselect = false;
 			if (TextProjectFile.Text.Length == 0)
-				openFileDialog1.InitialDirectory = @"C:\Projects\HealthViews\DEV\Current\HVClinician\ComponentsSource\VB6";
+				openFileDialog1.InitialDirectory = @"C:\Projects\whatever\VB6";
 			if (openFileDialog1.ShowDialog(this).Equals(DialogResult.OK))
 			{
 				TextProjectFile.Text = openFileDialog1.FileName;
@@ -47,7 +47,7 @@ namespace ProjectParser
 			if (TextTargetDir.Text.Length > 0)
 				folderBrowserDialog1.SelectedPath = TextTargetDir.Text;
 			else
-				folderBrowserDialog1.SelectedPath = @"C:\Projects\HealthViews\DEV\Current\HVClinician\ComponentsSource";
+				folderBrowserDialog1.SelectedPath = @"C:\Projects\whatever\ComponentsSource";
 			
 			if (folderBrowserDialog1.ShowDialog(this).Equals(DialogResult.OK))
 				TextTargetDir.Text = folderBrowserDialog1.SelectedPath;
